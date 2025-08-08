@@ -1,4 +1,4 @@
-package br.com.api.lavanderia.api_lavanderia.model;
+package br.com.api.lavanderia.api_lavanderia.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
