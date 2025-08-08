@@ -22,7 +22,7 @@ public class ClienteController {
     }
 
     @PostMapping
-    public void salverCliente(@RequestBody Cliente cliente){
+    public void salvarCliente(@RequestBody Cliente cliente){
         clienteService.inserir(cliente);
     }
 
