@@ -10,12 +10,12 @@ public class Cliente {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String nome;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cep", referencedColumnName = "cep")
-    private Endereco endereco;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "cep", referencedColumnName = "cep")
+//    private Endereco endereco;
     @NotNull
     private String telefone;
     private String email;
