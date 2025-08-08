@@ -26,8 +26,8 @@ public class ClienteController {
         clienteService.inserir(cliente);
     }
 
-    @GetMapping("/{buscarTodos}")
-    public List<Cliente> BuscarCliente(){
+    @GetMapping("/todos")
+    public List<Cliente> BuscarClientes(){
         return clienteService.buscarTodos();
     }
 }
