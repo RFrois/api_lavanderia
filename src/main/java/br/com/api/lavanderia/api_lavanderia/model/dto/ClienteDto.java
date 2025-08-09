@@ -5,8 +5,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 public class ClienteDto {
 
     private Long id;
@@ -14,5 +13,6 @@ public class ClienteDto {
   //  private EnderecoDto endereco;
     private String telefone;
     private String email;
+
 
 }

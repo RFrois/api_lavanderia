@@ -1,14 +1,13 @@
 package br.com.api.lavanderia.api_lavanderia.controller;
 
+import br.com.api.lavanderia.api_lavanderia.model.converter.ClienteConverter;
 import br.com.api.lavanderia.api_lavanderia.model.dto.ClienteDto;
 import br.com.api.lavanderia.api_lavanderia.model.entity.Cliente;
 import br.com.api.lavanderia.api_lavanderia.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/Cliente")
@@ -16,6 +15,8 @@ public class ClienteController {
 
     @Autowired
     private ClienteService clienteService;
+    @Autowired
+    private ClienteConverter clienteConverter;
 
 
     @GetMapping
@@ -24,8 +25,9 @@ public class ClienteController {
     }
 
     @PostMapping
-    public void salvarCliente(@RequestBody ClienteDto clienteDto){
-        clienteService.inserir(clienteDto);
+    public void salvarCliente(@RequestBody ClienteDto dto){
+        clienteConverter.toEntity(dto);
+        //clienteService.inserir(clienteConverter);
     }
 
     @GetMapping("/todos")
