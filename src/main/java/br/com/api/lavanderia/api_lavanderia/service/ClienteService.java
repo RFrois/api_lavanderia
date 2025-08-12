@@ -16,8 +16,11 @@ public class ClienteService {
     @Autowired
     private ClienteRepository clienteRepository;
 
-    public void inserir(Cliente cliente){
-        clienteRepository.save(cliente);
+    @Autowired
+    private ClienteConverter clienteConverter;
+
+    public void inserir(ClienteDto clienteDto){
+        clienteRepository.save((clienteConverter.toEntity(clienteDto)));
     }
 
     public List<Cliente> buscarTodos(){

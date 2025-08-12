@@ -15,8 +15,6 @@ public class ClienteController {
 
     @Autowired
     private ClienteService clienteService;
-    @Autowired
-    private ClienteConverter clienteConverter;
 
 
     @GetMapping
@@ -26,8 +24,7 @@ public class ClienteController {
 
     @PostMapping
     public void salvarCliente(@RequestBody ClienteDto dto){
-        clienteConverter.toEntity(dto);
-        //clienteService.inserir(clienteConverter);
+        clienteService.inserir(dto);
     }
 
     @GetMapping("/todos")
