@@ -28,7 +28,7 @@ public class ClienteController {
     }
 
     @GetMapping("/todos")
-    public List<Cliente> BuscarClientes(){
+    public List<ClienteDto> BuscarClientes(){
         return clienteService.buscarTodos();
     }
 }

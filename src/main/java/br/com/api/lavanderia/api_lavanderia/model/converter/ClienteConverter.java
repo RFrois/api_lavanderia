@@ -8,7 +8,12 @@ import org.springframework.stereotype.Component;
 public class ClienteConverter {
 
     public ClienteDto toDTO(Cliente cliente){
-      return new ClienteDto();
+        ClienteDto clienteDto = new ClienteDto();
+        clienteDto.setId(cliente.getId());
+        clienteDto.setNome(cliente.getNome());
+        clienteDto.setTelefone(cliente.getTelefone());
+        clienteDto.setEmail(cliente.getEmail());
+      return clienteDto;
     }
 
     public Cliente toEntity(ClienteDto dto) {
