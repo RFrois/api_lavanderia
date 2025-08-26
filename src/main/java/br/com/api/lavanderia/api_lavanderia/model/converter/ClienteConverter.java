@@ -2,10 +2,16 @@ package br.com.api.lavanderia.api_lavanderia.model.converter;
 
 import br.com.api.lavanderia.api_lavanderia.model.dto.ClienteDto;
 import br.com.api.lavanderia.api_lavanderia.model.entity.Cliente;
+import br.com.api.lavanderia.api_lavanderia.repository.ClienteRepository;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class ClienteConverter {
+
+    private ClienteRepository clienteRepository;
 
     public ClienteDto toDTO(Cliente cliente){
         ClienteDto clienteDto = new ClienteDto();
@@ -22,6 +28,14 @@ public class ClienteConverter {
         cliente.setEmail(dto.getEmail());
         cliente.setTelefone(dto.getTelefone());
         return cliente;
+    }
+
+    public List<ClienteDto> toDTOList(List<Cliente> clientes) {
+        List<ClienteDto> clientesDto = new ArrayList<>();
+        for (Cliente cliente : clientes) {
+            clientesDto.add(toDTO(cliente));
+        }
+        return clientesDto;
     }
 
 }

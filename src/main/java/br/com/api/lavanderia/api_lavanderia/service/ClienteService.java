@@ -24,15 +24,8 @@ public class ClienteService {
         clienteRepository.save((clienteConverter.toEntity(clienteDto)));
     }
 
-    public List<ClienteDto> buscarTodos(){
+    public List<ClienteDto> buscarTodos() {
         List<Cliente> clientes = clienteRepository.findAll();
-        List<ClienteDto> clientesDto = new ArrayList<>();
-
-        for (Cliente cliente : clientes) {
-            ClienteDto dto = clienteConverter.toDTO(cliente);
-            clientesDto.add(dto);
-        }
-
-        return clientesDto;
+        return clienteConverter.toDTOList(clientes);
     }
 }
