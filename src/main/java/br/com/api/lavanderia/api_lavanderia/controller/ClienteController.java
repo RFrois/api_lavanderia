@@ -1,8 +1,6 @@
 package br.com.api.lavanderia.api_lavanderia.controller;
 
-import br.com.api.lavanderia.api_lavanderia.model.converter.ClienteConverter;
 import br.com.api.lavanderia.api_lavanderia.model.dto.ClienteDto;
-import br.com.api.lavanderia.api_lavanderia.model.entity.Cliente;
 import br.com.api.lavanderia.api_lavanderia.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

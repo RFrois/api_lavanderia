@@ -2,8 +2,6 @@ package br.com.api.lavanderia.api_lavanderia.model.dto;
 
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Data
 public class ClienteDto {
