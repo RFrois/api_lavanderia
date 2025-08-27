@@ -31,4 +31,9 @@ public class ClienteController {
     public List<ClienteDto> BuscarClientes(){
         return clienteService.buscarTodos();
     }
+
+    @GetMapping("/{filial}")
+    public List<ClienteDto> BuscarPorFilial(@PathVariable int filial){
+        return clienteService.buscarPorFilial(filial);
+    }
 }

@@ -13,6 +13,7 @@ public class ClienteDto {
   //  private EnderecoDto endereco;
     private String telefone;
     private String email;
+    private int filial;
 
 
 }

@@ -25,5 +25,6 @@ public class Cliente {
     private String telefone;
     @JsonProperty("email")
     private String email;
+    private int filial;
 
 }

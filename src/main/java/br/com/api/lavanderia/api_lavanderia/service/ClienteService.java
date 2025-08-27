@@ -28,4 +28,9 @@ public class ClienteService {
         List<Cliente> clientes = clienteRepository.findAll();
         return clienteConverter.toDTOList(clientes);
     }
+
+    public List<ClienteDto> buscarPorFilial(int filial){
+        List<Cliente> clientes = clienteRepository.findByFilial(filial);
+        return clienteConverter.toDTOList(clientes);
+    }
 }

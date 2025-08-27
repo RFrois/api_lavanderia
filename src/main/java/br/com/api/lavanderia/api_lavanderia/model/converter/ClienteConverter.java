@@ -19,6 +19,7 @@ public class ClienteConverter {
         clienteDto.setNome(cliente.getNome());
         clienteDto.setTelefone(cliente.getTelefone());
         clienteDto.setEmail(cliente.getEmail());
+        clienteDto.setFilial(cliente.getFilial());
       return clienteDto;
     }
 
@@ -27,6 +28,7 @@ public class ClienteConverter {
         cliente.setNome(dto.getNome());
         cliente.setEmail(dto.getEmail());
         cliente.setTelefone(dto.getTelefone());
+        cliente.setFilial(dto.getFilial());
         return cliente;
     }
 
