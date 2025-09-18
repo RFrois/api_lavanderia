@@ -25,6 +25,7 @@ public class ClienteConverter {
 
     public Cliente toEntity(ClienteDto dto) {
         Cliente cliente = new Cliente();
+        cliente.setId(dto.getId());
         cliente.setNome(dto.getNome());
         cliente.setEmail(dto.getEmail());
         cliente.setTelefone(dto.getTelefone());

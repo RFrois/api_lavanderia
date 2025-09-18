@@ -3,6 +3,7 @@ package br.com.api.lavanderia.api_lavanderia.controller;
 import br.com.api.lavanderia.api_lavanderia.model.dto.ClienteDto;
 import br.com.api.lavanderia.api_lavanderia.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,8 +31,11 @@ public class ClienteController {
         return clienteService.buscarTodos();
     }
 
-    @GetMapping("/{filial}")
+    @GetMapping("/filial/{filial}")
     public List<ClienteDto> BuscarPorFilial(@PathVariable int filial){
         return clienteService.buscarPorFilial(filial);
     }
+
+    @GetMapping("/id/{id}")
+    public ClienteDto buscarPorId(@PathVariable Long id) {return clienteService.buscarPorId(id);}
 }

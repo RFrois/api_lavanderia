@@ -1,6 +1,7 @@
 package br.com.api.lavanderia.api_lavanderia.service;
 
 
+import br.com.api.lavanderia.api_lavanderia.exception.ClienteNotFoundException;
 import br.com.api.lavanderia.api_lavanderia.model.converter.ClienteConverter;
 import br.com.api.lavanderia.api_lavanderia.model.dto.ClienteDto;
 import br.com.api.lavanderia.api_lavanderia.model.entity.Cliente;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClienteService {
@@ -31,5 +33,10 @@ public class ClienteService {
     public List<ClienteDto> buscarPorFilial(int filial){
         List<Cliente> clientes = clienteRepository.findByFilial(filial);
         return clienteConverter.toDTOList(clientes);
+    }
+
+    public ClienteDto buscarPorId(Long id){
+        Cliente cliente = clienteRepository.findById(id).orElseThrow(() -> new ClienteNotFoundException(id));
+        return clienteConverter.toDTO(cliente);
     }
 }
